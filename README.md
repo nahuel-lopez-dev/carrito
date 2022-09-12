@@ -1,5 +1,5 @@
-# **`Proyecto X`** 
-# *`Practicando algo...`* 
+# **`Carrito de compras`** 
+# *`Típico carrito de compras para un ecommerce`* 
 ### **`Nahuel-DevOne`**
 [![Contact Me](https://img.shields.io/badge/Email-informational?style=for-the-badge&logo=Mail.Ru&logoColor=fff&color=red)](mailto:nahue.developer1@gmail.com)
 [![LinkedId](https://img.shields.io/badge/LinkedIn-informational?style=for-the-badge&logo=linkedin&logoColor=fff&color=blue)](https://www.linkedin.com/in/nahuel-developer/)
@@ -7,13 +7,13 @@
 
 # *Información del proyecto:*
 
-El proyecto ...  
+El proyecto es el típico, y tan demandado carrito de compras, para un ecommerce.  
 
 ## *Version 1.0.0:*
 
 - [![App](https://img.shields.io/badge/App-informational?style=for-the-badge&logo=netlify&logoColor=fff&color=23272d)](https://...)
 
-- No tiene incorporada ninguna base de datos
+- No tiene incorporada ninguna base de datos. Usa localStorage como persistencia de los datos
 
 ## *Desarrollado con:*
 
@@ -21,9 +21,6 @@ El proyecto ...
 - [HTML](https://developer.mozilla.org/es/docs/Web/HTML)
 - [CSS](https://developer.mozilla.org/es/docs/Web/CSS)
 - [JavaScript](https://developer.mozilla.org/es/docs/Web/JavaScript)
-- [vite](https://vitejs.dev/guide/)
-- [React](https://reactjs.org/)
-- [TypeScript](https://www.typescriptlang.org/)
 
 
 <!-- ## **Screenshots:**
