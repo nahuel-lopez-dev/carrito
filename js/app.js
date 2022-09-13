@@ -10,8 +10,18 @@ const cargarEventListeners = () => {
     // Cuando agregas un curso presionando "Agregar al carrito"
     listaCursos.addEventListener('click', agregarCurso);
 
+    // Elimina cursos del carrito
+    carrito.addEventListener('click', eliminarCurso);
+
+    // Vaciar el carrito
+    vaciarCarritoBtn.addEventListener('click', () => {
+        articulosCarrito = []; // Reseteamos el arreglo
+        limpiarHTML(); // Eliminamos todo el HTML
+    });
+
 }
 
+// Agrega un curso al carrito
 const agregarCurso = (e) => {
     e.preventDefault();
     if(e.target.classList.contains('agregar-carrito')){
@@ -19,6 +29,17 @@ const agregarCurso = (e) => {
         leerDatosCurso(cursoSeleccionado);
     }
 }
+
+// Elimina un curso del carrito
+const eliminarCurso = (e) => {
+    if(e.target.classList.contains('borrar-curso')){
+        const cursoId = e.target.getAttribute('data-id');
+        // Elimina del arreglo de articulosCarrito por el data-id
+        articulosCarrito = articulosCarrito.filter( curso => curso.id !== cursoId);
+        carritoHTML(); // Iterar sobre el carrito y mostrar su HTML
+    }
+}
+
 
 // Lee el contenido del HTML al que le dimos click y extrae la información del curso
 const leerDatosCurso = (curso) => {
@@ -31,12 +52,29 @@ const leerDatosCurso = (curso) => {
         id: curso.querySelector('a').getAttribute('data-id'),
         cantidad: 1
     }
+
+    // Revisa si un elemento ya existe en el carrito
+    const existe = articulosCarrito.some( curso => curso.id === infoCurso.id );
+    if(existe){
+        // Actualizamos la cantidad con map que retorna un nuevo arreglo
+        const cursos = articulosCarrito.map( curso => {
+            if(curso.id === infoCurso.id){
+                curso.cantidad++;
+                return curso; // Retorna el objeto actualizado
+            } else {
+                return curso; // Retorna los objetos que no son duplicados
+            }
+        });
+        articulosCarrito = [...cursos];
+    } else {
+        // agregar elementos al arreglo de carrito
+        // usando el spread operator, se agregan primero los artículos anteriormente agregados
+        // De esa manera no se pierden los artículos que ya estaban en el carrito (no se pierde la referencia)
+        articulosCarrito = [...articulosCarrito, infoCurso];
+    }
+
     // console.log(infoCurso);
-    // agregar elementos al arreglo de carrito
-    // usando el spread operator, se agregan primero los artículos anteriormente agregados
-    // De esa manera no se pierden los artículos que ya estaban en el carrito (no se pierde la referencia)
-    articulosCarrito = [...articulosCarrito, infoCurso];
-    console.log(articulosCarrito);
+    // console.log(articulosCarrito);
     carritoHTML();
 }
 
