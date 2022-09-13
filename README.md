@@ -11,7 +11,7 @@ El proyecto es el típico, y tan demandado carrito de compras, para un ecommerce
 
 ## *Version 1.0.0:*
 
-- [![App](https://img.shields.io/badge/App-informational?style=for-the-badge&logo=netlify&logoColor=fff&color=23272d)](https://...)
+- [![App](https://img.shields.io/badge/App-informational?style=for-the-badge&logo=netlify&logoColor=fff&color=23272d)](https://nahuel-devone.github.io/carrito/)
 
 - No tiene incorporada ninguna base de datos. Usa localStorage como persistencia de los datos
 
